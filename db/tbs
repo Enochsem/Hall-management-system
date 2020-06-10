@@ -1,0 +1,85 @@
+CREATE TABLE `hall`.
+`admin_register` ( `id` INT(10) NOT NULL AUTO_INCREMENT ,
+ `username` VARCHAR(30) NOT NULL ,
+  `email` VARCHAR(50) NOT NULL , 
+  `password` VARCHAR(30) NOT NULL ,
+   PRIMARY KEY (`id`))
+    ENGINE = InnoDB;
+
+
+CREATE TABLE `hall`.
+`student_register` ( `id` INT(10) NOT NULL AUTO_INCREMENT ,
+ `registration_id` VARCHAR(16) NOT NULL ,
+  `level` VARCHAR(3) NOT NULL ,
+   `username` VARCHAR(30) NOT NULL ,
+    `email` VARCHAR(50) NOT NULL ,
+     `room` VARCHAR(3) NOT NULL ,
+      `password` VARCHAR(30) NOT NULL ,
+       PRIMARY KEY (`id`))
+        ENGINE = InnoDB;
+
+
+
+
+CREATE TABLE `hall`.
+`student_signup` ( `id` INT(10) NOT NULL AUTO_INCREMENT ,
+ `registration_id` VARCHAR(16) NOT NULL ,
+  `first_name` VARCHAR(30) NOT NULL ,
+   `last_name` VARCHAR(30) NOT NULL ,
+    `other_name` VARCHAR(20) NULL DEFAULT NULL ,
+     `email` VARCHAR(50) NOT NULL ,
+      `programme` VARCHAR(100) NOT NULL ,
+       `room_number` VARCHAR(3) NOT NULL ,
+        `date_of_birth` DATE NOT NULL ,
+         `gender` VARCHAR(6) NOT NULL ,
+          `phone_number` VARCHAR(15) NOT NULL ,
+           `username` VARCHAR(30) NOT NULL ,
+            `password` VARCHAR(30) NOT NULL ,
+             `imglink` VARCHAR(150) NOT NULL ,
+              PRIMARY KEY (`id`))
+               ENGINE = InnoDB;
+
+
+
+
+CREATE TABLE `hall`.
+`admin_signup` ( `ID` INT(10) NOT NULL AUTO_INCREMENT ,
+ `username` VARCHAR(30) NOT NULL ,
+  `email` VARCHAR(50) NOT NULL ,
+   `office` VARCHAR(35) NOT NULL ,
+    `password` VARCHAR(30) NOT NULL ,
+     `imglink` VARCHAR(150) NOT NULL ,
+      PRIMARY KEY (`ID`))
+       ENGINE = InnoDB;
+
+
+
+CREATE TABLE `hall`.
+`room` ( `id` INT(3) NOT NULL AUTO_INCREMENT ,
+ `room_number` VARCHAR(3) NOT NULL , 
+ `registration_number` VARCHAR(15) NOT NULL ,
+  `key_number` VARCHAR(3) NOT NULL ,
+   PRIMARY KEY (`id`))
+    ENGINE = InnoDB;      
+
+
+
+
+CREATE TABLE `hall`.
+`notifications` ( `id` INT(10) NOT NULL AUTO_INCREMENT ,
+ `email` VARCHAR(45) NOT NULL , `phone_number` VARCHAR(13) NOT NULL ,
+  `date` DATETIME NOT NULL ,
+   `status` INT(2) NOT NULL DEFAULT '0' ,
+    PRIMARY KEY (`id`))
+     ENGINE = InnoDB;
+
+
+CREATE TABLE `hall`.
+`track_k` ( `id` INT(50) NOT NULL AUTO_INCREMENT ,
+ `registration_id` VARCHAR(15) NULL ,
+  `key_status` INT(2) NOT NULL DEFAULT '0' ,
+   `room_number` VARCHAR(3) NOT NULL ,
+    `date` DATE NOT NULL ,
+     PRIMARY KEY (`id`))
+      ENGINE = InnoDB;
+
